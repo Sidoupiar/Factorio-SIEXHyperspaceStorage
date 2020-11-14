@@ -10,7 +10,7 @@ local list =
 		energy = "10M" ,
 		size = { 3 , 2 } ,
 		recipe = { { "steam-engine" , 10 } , { "assembling-machine-1" , 20 } , { "electronic-circuit" , 60 } } ,
-		technology = { { "automation" } , { "automation-science-pack" } , 50 , 15 }
+		technology = { { "automation" , SIEXHS.ingredientsTechnology } , { "automation-science-pack" } , 50 , 15 }
 	} ,
 	{
 		energy = "500M" ,
