@@ -59,7 +59,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetEnergy( 1 )
 	.SetRecipeTypes( recipeType )
 	.SetResults{ SIPackers.SingleItemProduct( itemName , 1 , nil , nil , 1 ) }
-	.SetCustomData{ enabled = true }
+	.SetEnabled( true )
 	.GetCurrentEntityName()
 	table.insert( SIEXHS.powerItems , itemName )
 	
