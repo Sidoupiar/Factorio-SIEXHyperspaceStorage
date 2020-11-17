@@ -57,9 +57,9 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedNames{ "SIEXHS.name-power-recipe" , level }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-power-recipe" }
 	.SetEnergy( 1 )
+	.SetEnabled( true )
 	.SetRecipeTypes( recipeType )
 	.SetResults{ SIPackers.SingleItemProduct( itemName , 1 , nil , nil , 1 ) }
-	.SetEnabled( true )
 	.GetCurrentEntityName()
 	table.insert( SIEXHS.powerItems , itemName )
 	
