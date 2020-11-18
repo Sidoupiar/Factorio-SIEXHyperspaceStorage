@@ -53,7 +53,7 @@ function SIEXHSTeleport.Teleport( event )
 			for index = currentTick , maxSize , SIEXHSTeleport.delay do
 				if index > maxSize then break end
 				local entity = SIEXHSTeleport.GetEntity( list[index] )
-				if entity.active and not entity.to_be_deconstructed( forceIndex ) then
+				if not entity.to_be_deconstructed( forceIndex ) then
 					local inventory = entity.get_inventory( defines.inventory.chest )
 					if not inventory.is_empty() then
 						local settings = SIEXHSTeleport.GetSettings( entity )
@@ -85,7 +85,7 @@ function SIEXHSTeleport.Teleport( event )
 			for index = currentTick , maxSize , SIEXHSTeleport.delay do
 				if index > maxSize then break end
 				local entity = SIEXHSTeleport.GetEntity( list[index] )
-				if entity.active and not entity.to_be_deconstructed( forceIndex ) then
+				if not entity.to_be_deconstructed( forceIndex ) then
 					local settings = SIEXHSTeleport.GetSettings( entity )
 					if settings.speed > 0 then
 						local inventory = entity.get_inventory( defines.inventory.chest )

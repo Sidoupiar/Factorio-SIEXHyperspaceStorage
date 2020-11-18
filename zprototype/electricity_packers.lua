@@ -3,7 +3,6 @@
 -- ------------------------------------------------------------------------------------------------
 
 local fuelType = "siexhs-electricity-power"
-local recipeType = "siexhs-electricity-power-packer"
 local list =
 {
 	{
@@ -39,7 +38,7 @@ SIEXHS.powerItems = {}
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-SIGen.NewTypeFuel( fuelType ).NewTypeRecipe( recipeType )
+SIGen.NewTypeFuel( fuelType )
 
 -- ------------------------------------------------------------------------------------------------
 -- ---- 创建物品实体配方科技 ----------------------------------------------------------------------
@@ -51,6 +50,9 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	local size = packerData.size
 	local recipe = packerData.recipe
 	local technology = packerData.technology
+	local recipeType = "siexhs-electricity-power-packer-mk" .. level
+	
+	SIGen.NewTypeRecipe( recipeType )
 	
 	local itemName = SIGen.NewSubGroup( "hyperspace-electricity-item" )
 	.NewItem( "electricity-power-mk"..level , 100 )
