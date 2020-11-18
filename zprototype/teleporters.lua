@@ -66,6 +66,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 			.AddCosts( SIPackers.IngredientsWithList( teleporterData.ingredients ) )
 			.AddCosts( SIPackers.IngredientsWithList( entityData[5] ) )
 			.AddCosts( SIEXHS.powerItems[level] , level*200 )
+			.AddCosts( SIEXHS.coreItem , level )
 			.AddCosts( lastItemName )
 			.AddResults( itemName )
 			.AddLastLevel( 2 )
