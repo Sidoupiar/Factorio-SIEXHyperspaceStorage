@@ -4,5 +4,5 @@ return
 	autoLoad = true ,
 	autoName = true ,
 	
-	maxLevel = 3
+	maxLevel = 5
 }
