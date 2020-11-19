@@ -9,7 +9,7 @@ local list =
 	{
 		small = { 1 , 14 , 2 , 60 , { { SIEXHS.wallItem , 200 } } } ,
 		normal = { 3 , 44 , 2 , 120 , { { "steel-plate" , 100 } } } ,
-		ingredients = { { "splitter" , 300 } , { "filter-inserter" , 200 } , { "electric-mining-drill" , 100 } }
+		ingredients = { { "splitter" , 300 } , { "fast-inserter" , 200 } , { "electric-mining-drill" , 100 } }
 	} ,
 	{
 		small = { 1 , 29 , 3 , 120 } ,
