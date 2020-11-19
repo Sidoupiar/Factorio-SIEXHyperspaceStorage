@@ -18,4 +18,4 @@ SIGen
 .AddCosts( "stone" , 10 )
 .AddCosts( "iron-ore" , 1 )
 .AddCosts( "copper-ore" , 1 )
-.AddResults( SIPackers.SingleItemProduct( SIEXHS.coreItem , 0.005 , 1 , 1 , 1 ) )
+.AddResults( SIPackers.SingleItemProduct( SIEXHS.coreItem , 0.002 , 1 , 1 , 1 ) )
