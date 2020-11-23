@@ -12,22 +12,22 @@ local list =
 		structure = { { "splitter" , 8 } , { "fast-inserter" , 5 } , { "electric-mining-drill" , 3 } }
 	} ,
 	{
-		small = { 1 , 29 , 3 , 120 } ,
+		small = { 1 , 29 , 3 , 120 , { { SIEXHS.wallItem , 300 } } } ,
 		normal = { 3 , 89 , 3 , 240 , { { "logistic-science-pack" , 250 } } } ,
 		structure = { { "laser-turret" , 7 } , { "assembling-machine-2" , 3 } , { "locomotive" , 3 } }
 	} ,
 	{
-		small = { 1 , 59 , 4 , 240 } ,
+		small = { 1 , 59 , 4 , 240 , { { SIEXHS.wallItem , 500 } } } ,
 		normal = { 3 , 179 , 5 , 480 , { { "iron-chest" , 350 } } } ,
 		structure = { { "production-science-pack" , 5 } , { "power-switch" , 3 } , { "low-density-structure" , 3 } , { "substation" , 2 } }
 	} ,
 	{
-		small = { 1 , 119 , 6 , 480 } ,
+		small = { 1 , 119 , 6 , 480{ { SIEXHS.wallItem , 800 } } } ,
 		normal = { 3 , 359 , 9 , 960 , { { "steel-chest" , 350 } } } ,
 		structure = { { "express-underground-belt" , 5 } , { "fusion-reactor-equipment" , 3 } , { "effectivity-module-3" , 3 } , { "uranium-fuel-cell" , 5 } }
 	} ,
 	{
-		small = { 1 , 239 , 8 , 960 } ,
+		small = { 1 , 239 , 8 , 960{ { SIEXHS.wallItem , 1200 } } } ,
 		normal = { 3 , 719 , 13 , 1920 , { { "logistic-chest-buffer" , 350 } } } ,
 		structure = { { "utility-science-pack" , 5 } , { "rocket-control-unit" , 10 } , { "satellite" , 1 } , { "rocket-silo" , 1 } }
 	}
@@ -47,7 +47,7 @@ local lastItemName = {}
 for level = 1 , SIEXHS.maxLevel , 1 do
 	local teleporterData = list[level]
 	
-	local structureItem = SIGen.NewSubGroup( "hyperspace-teleporter-base" )
+	local structureItem = SIGen.NewSubGroup( "hyperspace-teleporter-structure" )
 	.NewItem( "hyperspace-structure-mk"..level , 5 )
 	.SetLocalisedNames{ "SIEXHS.name-structure" , level }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-structure" }
