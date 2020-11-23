@@ -22,12 +22,12 @@ local list =
 		structure = { { "production-science-pack" , 5 } , { "power-switch" , 3 } , { "low-density-structure" , 3 } , { "substation" , 2 } }
 	} ,
 	{
-		small = { 1 , 159 , 6 , 480{ { SIEXHS.wallItem , 800 } } } ,
+		small = { 1 , 159 , 6 , 480 , { { SIEXHS.wallItem , 800 } } } ,
 		normal = { 3 , 479 , 14 , 960 , { { "steel-chest" , 350 } } } ,
 		structure = { { "express-underground-belt" , 5 } , { "fusion-reactor-equipment" , 3 } , { "effectivity-module-3" , 3 } , { "uranium-fuel-cell" , 5 } }
 	} ,
 	{
-		small = { 1 , 319 , 8 , 960{ { SIEXHS.wallItem , 1200 } } } ,
+		small = { 1 , 319 , 8 , 960 , { { SIEXHS.wallItem , 1200 } } } ,
 		normal = { 3 , 959 , 20 , 1920 , { { "logistic-chest-buffer" , 350 } } } ,
 		structure = { { "utility-science-pack" , 5 } , { "rocket-control-unit" , 10 } , { "satellite" , 1 } , { "rocket-silo" , 1 } }
 	}
@@ -38,7 +38,7 @@ local list =
 -- ------------------------------------------------------------------------------------------------
 
 SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 )
-for i = 1 , 4 , 1 then SIGen.NewItem( "teleport-limit-up-"..i , 1000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
+for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 1000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 -- ------------------------------------------------------------------------------------------------
 -- ---- 创建物品实体配方科技 ----------------------------------------------------------------------

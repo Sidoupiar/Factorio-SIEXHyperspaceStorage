@@ -12,7 +12,6 @@ SIEXHSTeleport =
 	speedItemName = "siexhs-item-teleport-speed" ,
 	limitUpItemName = "siexhs-item-teleport-limit-up" ,
 	limitDownItemName = "siexhs-item-teleport-limit-down" ,
-	
 	delay = 120 ,
 	
 	settingsDefault =
