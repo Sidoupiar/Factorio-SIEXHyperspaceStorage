@@ -37,7 +37,8 @@ local list =
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 ).NewItem( "teleport-limit" , 1000 )
+SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 )
+for i = 1 , 4 , 1 then SIGen.NewItem( "teleport-limit-up-"..i , 1000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 -- ------------------------------------------------------------------------------------------------
 -- ---- 创建物品实体配方科技 ----------------------------------------------------------------------

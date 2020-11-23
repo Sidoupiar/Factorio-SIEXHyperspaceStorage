@@ -10,6 +10,9 @@
 SIEXHSTeleport =
 {
 	speedItemName = "siexhs-item-teleport-speed" ,
+	limitUpItemName = "siexhs-item-teleport-limit-up" ,
+	limitDownItemName = "siexhs-item-teleport-limit-down" ,
+	
 	delay = 120 ,
 	
 	settingsDefault =
@@ -18,6 +21,8 @@ SIEXHSTeleport =
 		items = {}
 	}
 }
+SIEXHSTeleport.limitUpItemNameLength = #SIEXHSTeleport.limitUpItemName
+SIEXHSTeleport.limitDownItemNameLength = #SIEXHSTeleport.limitDownItemName
 
 -- ------------------------------------------------------------------------------------------------
 -- ---------- 功能方法 ----------------------------------------------------------------------------
@@ -31,9 +36,24 @@ function SIEXHSTeleport.GetSettings( entity )
 	local logistic = entity.get_logistic_point( defines.logistic_member_index.logistic_container )
 	local settings = table.deepcopy( SIEXHSTeleport.settingsDefault )
 	if logistic.filters then
+		local limitUp = nil
+		local limitDown = nil
 		for i , filter in pairs( logistic.filters ) do
 			if filter.name == SIEXHSTeleport.speedItemName then settings.speed = filter.count
-			else table.insert( settings.items , { filter.name , filter.count } ) end
+			elseif #filter.name >= SIEXHSTeleport.limitUpItemNameLength and filter.name:sub( 1 , SIEXHSTeleport.limitUpItemNameLength ) == SIEXHSTeleport.limitUpItemName then limitUp = filter.count
+			elseif #filter.name >= SIEXHSTeleport.limitDownItemNameLength and filter.name:sub( 1 , SIEXHSTeleport.limitDownItemNameLength ) == SIEXHSTeleport.limitDownItemName then limitDown = filter.count
+			else
+				local item = { filter.name , filter.count , 0 , 0 }
+				if limitUp then
+					item[3] = limitUp
+					limitUp = nil
+				end
+				if limitDown then
+					item[4] = limitDown
+					limitDown = nil
+				end
+				table.insert( settings.items , item )
+			end
 		end
 	end
 	return settings
@@ -62,16 +82,23 @@ function SIEXHSTeleport.Teleport( event )
 								local name = itemData[1]
 								local count = inventory.get_item_count( name )
 								if count > itemData[2] then
-									local removeCount = inventory.remove{ name = name , count = math.min( count-itemData[2] , settings.speed ) }
 									local b = true
 									for n , storageItemData in pairs( storage ) do
 										if storageItemData[1] == name then
-											storageItemData[2] = storageItemData[2] + removeCount
+											if itemData[3] > 0 and itemData[3] < storageItemData[2] then
+												b = false
+												break
+											end
+											if itemData[4] > 0 and itemData[4] > storageItemData[2] then
+												b = false
+												break
+											end
+											storageItemData[2] = storageItemData[2] + inventory.remove{ name = name , count = math.min( count-itemData[2] , settings.speed ) }
 											b = false
 											break
 										end
 									end
-									if b then table.insert( storage , { name , removeCount } ) end
+									if b then table.insert( storage , { name , inventory.remove{ name = name , count = math.min( count-itemData[2] , settings.speed ) } } ) end
 								end
 							end
 						end
@@ -97,6 +124,14 @@ function SIEXHSTeleport.Teleport( event )
 								local storageItemCount = 0
 								for n , storageItemData in pairs( storage ) do
 									if storageItemData[1] == name then
+										if itemData[3] > 0 and itemData[3] < storageItemData[2] then
+											storageItemCount = 0
+											break
+										end
+										if itemData[4] > 0 and itemData[4] > storageItemData[2] then
+											storageItemCount = 0
+											break
+										end
 										storageItemIndex = n
 										storageItemCount = storageItemData[2]
 										break
