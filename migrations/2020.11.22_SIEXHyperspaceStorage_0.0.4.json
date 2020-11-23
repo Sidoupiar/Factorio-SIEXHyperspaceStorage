@@ -2,5 +2,9 @@
 	"item":
 	[
 		[ "siexhs-item-gel" , "siexhs-item-gel-7" ] ,
+	] ,
+	"recipe":
+	[
+		[ "siexhs-recipe-siexhs-item-gel" , "siexhs-recipe-siexhs-item-gel-7" ]
 	]
 }
