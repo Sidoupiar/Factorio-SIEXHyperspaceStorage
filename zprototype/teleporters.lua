@@ -38,7 +38,7 @@ local list =
 -- ------------------------------------------------------------------------------------------------
 
 SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 )
-for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 1000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
+for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 10000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 -- ------------------------------------------------------------------------------------------------
 -- ---- 创建物品实体配方科技 ----------------------------------------------------------------------
