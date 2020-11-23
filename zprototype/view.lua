@@ -67,6 +67,11 @@ local view =
 		type = "label_style" ,
 		width = 250 ,
 		horizontal_align = "left"
+	} ,
+	["siexhs-textfield-long"] =
+	{
+		type = "textbox_style" ,
+		width = 219
 	}
 }
 

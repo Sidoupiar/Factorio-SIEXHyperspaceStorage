@@ -30,7 +30,7 @@ function SIEXHSTeleporter.Build( event )
 			forceData = table.deepcopy( SIEXHSTeleporter.forceDataDefault )
 			containerData[forceIndex] = forceData
 		end
-		table.insert( forceData[typeCode] , { name , entity.surface.index , { entity.position.x , entity.position.y } } )
+		table.insert( forceData[typeCode] , { name , entity.surface.index , { entity.position.x , entity.position.y } , NewEntityIndex() , nil } )
 	end
 end
 

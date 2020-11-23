@@ -121,7 +121,7 @@ function SIEXHSContainerView.FreshList( playerIndex , settings )
 		list.add{ type = "label" , caption = { "SIEXHS.container-view-label-name" } , style="siexhs-label-long" }
 		list.add{ type = "label" , caption = { "SIEXHS.container-view-label-count" } , style="siexhs-label-long" }
 		if #storage == 0 then
-			list.add{ type = "sprite-button" , sprite = "item/sicfl-item-empty" , style = "siexhs-list-icon" }
+			list.add{ type = "sprite-button" , sprite = "item/sicfl-item-icon-empty" , style = "siexhs-list-icon" }
 			list.add{ type = "label" , caption = { "SIEXHS.container-view-item-none" } , style="siexhs-label-long" }
 			list.add{ type = "label" , caption = { "SIEXHS.container-view-item-count-infinity" } , style="siexhs-label-long" }
 		else
