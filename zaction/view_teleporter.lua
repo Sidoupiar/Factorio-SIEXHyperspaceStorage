@@ -241,7 +241,9 @@ function SIEXHSTeleporterView.OnClickView( event )
 			else player.print( { "SIEXHS.teleporter-view-entity-name-save-not" } , SIColors.printColor.orange ) end
 		elseif name:find( SIEXHSTeleporterView.iconRegex ) then
 			local data = name:sub( SIEXHSTeleporterView.iconPosition )
-			SIEXHSTeleporterView.TeleportPlayer( event.player_index , data:sub( 1 , 1 ) , tonumber( data:sub( 2 ) ) )
+			local playerIndex = event.player_index
+			SIEXHSTeleporterView.TeleportPlayer( playerIndex , data:sub( 1 , 1 ) , tonumber( data:sub( 2 ) ) )
+			SIEXHSTeleporterView.FreshList( playerIndex , SIEXHSTeleporterView.GetSettings( playerIndex ) )
 		elseif name:find( SIEXHSTeleporterView.editRegex ) then
 			local data = name:sub( SIEXHSTeleporterView.editPosition )
 			local playerIndex = event.player_index
