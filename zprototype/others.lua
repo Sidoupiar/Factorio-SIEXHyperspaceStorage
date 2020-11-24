@@ -6,6 +6,8 @@
 -- ---------- 额外材料 ----------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
+SIGen.NewSubGroup( "hyperspace-teleporter-others" )
+
 local onDeath = SIGen.NewItem( "hand-on-death" ).GetCurrentEntityName()
 
 SIGen.NewRecipe( onDeath )
