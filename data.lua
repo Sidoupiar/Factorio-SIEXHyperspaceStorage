@@ -8,6 +8,6 @@ SIGen
 .Init( SIEXHS )
 .NewGroup( "extensions" )
 
-needlist( "zprototype" , "view" , "base_items" , "electricity_packers" , "teleporters" )
+needlist( "zprototype" , "view" , "base_items" , "electricity_packers" , "teleporters" , "others" )
 
 SIGen.Finish()

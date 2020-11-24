@@ -1,9 +1,18 @@
+-- ------------------------------------------------------------------------------------------------
+-- ---------- 创建材料 ----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------
+
 SIGen.NewSubGroup( "hyperspace-teleporter-base" )
 
-SIEXHS.coreItem = SIGen.NewItem( "main-core" , 1 ).GetCurrentEntityName()
+SIEXHS.coreItem = SIGen.NewItem( "main-core" ).GetCurrentEntityName()
 SIEXHS.wallItem = SIGen.NewItem( "super-wall" , 25 ).GetCurrentEntityName()
 SIEXHS.gel3Item = SIGen.NewItem( "gel-3" , 45 ).GetCurrentEntityName()
 SIEXHS.gel7Item = SIGen.NewItem( "gel-7" , 45 ).GetCurrentEntityName()
+SIEXHS.lightItem = SIGen.NewItem( "light" , 10 ).GetCurrentEntityName()
+
+-- ------------------------------------------------------------------------------------------------
+-- ---------- 创建配方 ----------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------
 
 SIGen
 
@@ -49,3 +58,13 @@ SIGen
 .AddResults( SIEXHS.gel7Item , 5 )
 .AddResults( SIPackers.SingleItemProduct( SIEXHS.coreItem , 1 , nil , nil , 1 ) )
 .SetSelfIcon( "gel-7" )
+
+.NewRecipe( SIEXHS.lightItem )
+.SetEnergy( 45 )
+.SetEnabled( true )
+.AddCosts( "wood" , 4 )
+.AddCosts( SIEXHS.wallItem , 10 )
+.AddCosts( SIEXHS.gel3Item , 5 )
+.AddCosts( SIEXHS.gel7Item , 12 )
+.AddResults( SIEXHS.lightItem , 2 )
+.SetSelfIcon( "light" )
