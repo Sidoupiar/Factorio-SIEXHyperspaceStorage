@@ -27,7 +27,7 @@ SIGlobal.Create( "commonData" )
 SIGlobal.Create( "containerView" )
 SIGlobal.Create( "teleporterView" )
 SIGlobal.Create( "containerData" )
-needlist( "zaction" , "view_container" , "view_teleporter" , "event_build" , "teleport" )
+needlist( "zaction" , "view_container" , "view_teleporter" , "event_build" , "teleport" , "hand" )
 
 -- ------------------------------------------------------------------------------------------------
 -- ---------- 公共方法 ----------------------------------------------------------------------------
