@@ -37,12 +37,19 @@ local list =
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 )
-.NewRecipe( "siexhs-item-teleport-speed" )
-.SetEnabled( true )
-.SetCosts( "iron-plate" )
-.SetResults( "siexhs-item-teleport-speed" )
+local speedItem = SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
 for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 10000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
+
+table.insert( list[1].structure , { speedItem , 5000 } )
+SIGen.NewSubGroup( "hyperspace-teleporter-base" )
+.NewRecipe( speedItem )
+.SetEnabled( true )
+.AddCosts( "transport-belt" , 4 )
+.AddCosts( "copper-plate" , 2 )
+.AddCosts( SIEXHS.coreItem )
+.AddResults( speedItem , 1000 )
+.AddResults( SIPackers.SingleItemProduct( SIEXHS.coreItem , 1 , nil , nil , 1 ) )
+.SetSelfIcon( "teleport-speed" )
 
 -- ------------------------------------------------------------------------------------------------
 -- ---- 创建物品实体配方科技 ----------------------------------------------------------------------
