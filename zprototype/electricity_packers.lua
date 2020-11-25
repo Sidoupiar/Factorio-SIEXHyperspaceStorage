@@ -109,6 +109,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedDescriptions{ "SIEXHS.desc-unpacker" }
 	.SetProperties( size[1] , size[2] , size[1]*100 , 1 , energy.."W" , SIPackers.ElectricEnergySource( SITypes.electricUsagePriority.secondaryOutput ) )
 	.SetCustomData{ burner = SIPackers.BurnerEnergySourceWithParameters{ fuel_category = fuelType } }
+	.SetPic( "animation" , CreatePic( "electricity-unpacker-mk"..level ) )
 	.GetCurrentEntityItemName()
 	
 	SIGen.NewRecipe( unpackerName )
