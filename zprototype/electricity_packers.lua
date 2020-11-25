@@ -38,10 +38,10 @@ local function CreatePic( name )
 	local path = SIGen.GetLayerFile()
 	return
 	{
-		north = SIPics.OnAnimLayer( path.."-north" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
-		east = SIPics.OnAnimLayer( path.."-east" , 2 , 3 ).Get() ,
-		south = SIPics.OnAnimLayer( path.."-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
-		west = SIPics.OnAnimLayer( path.."-west" , 2 , 3 ).Get() ,
+		north = SIPics.OnAnimLayer( path.."-north-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
+		east = SIPics.OnAnimLayer( path.."-east-west" , 2 , 3 ).Get() ,
+		south = SIPics.OnAnimLayer( path.."-north-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
+		west = SIPics.OnAnimLayer( path.."-east-west" , 2 , 3 ).Get() ,
 	}
 end
 
