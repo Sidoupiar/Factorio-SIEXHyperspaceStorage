@@ -38,6 +38,10 @@ local list =
 -- ------------------------------------------------------------------------------------------------
 
 SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 )
+.NewRecipe( "siexhs-item-teleport-speed" )
+.SetEnabled( true )
+.SetCosts( "iron-plate" )
+.SetResults( "siexhs-item-teleport-speed" )
 for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 10000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 -- ------------------------------------------------------------------------------------------------
