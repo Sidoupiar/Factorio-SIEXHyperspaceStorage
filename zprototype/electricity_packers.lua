@@ -103,8 +103,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.AddLastLevel( 4 )
 	
 	local unpackerLocalisedNames = { "SIEXHS.name-unpacker" , level }
-	local unpackerName = SIGen.NewSubGroup( "hyperspace-electricity-unpacker" )
-	.NewBurnerGenerator( "electricity-unpacker-mk"..level )
+	local unpackerName = SIGen.NewBurnerGenerator( "electricity-unpacker-mk"..level )
 	.SetLocalisedNames( unpackerLocalisedNames )
 	.SetLocalisedDescriptions{ "SIEXHS.desc-unpacker" }
 	.SetProperties( size[1] , size[2] , size[1]*100 , 1 , energy.."W" , SIPackers.ElectricEnergySource( SITypes.electricUsagePriority.secondaryOutput ) )
