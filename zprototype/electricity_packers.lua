@@ -34,6 +34,17 @@ local list =
 
 SIEXHS.powerItems = {}
 
+local function CreatePic( name )
+	local path = SIGen.GetLayerFile()
+	return
+	{
+		north = SIPics.OnAnimLayer( path.."-north" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
+		east = SIPics.OnAnimLayer( path.."-east" , 2 , 3 ).Get() ,
+		south = SIPics.OnAnimLayer( path.."-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
+		west = SIPics.OnAnimLayer( path.."-west" , 2 , 3 ).Get() ,
+	}
+end
+
 -- ------------------------------------------------------------------------------------------------
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
@@ -79,6 +90,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetProperties( size[1] , size[2] , size[1]*100 , 1 , energy.."W" , SIPackers.ElectricEnergySource() , 1 )
 	.SetRecipeTypes( recipeType )
 	.SetMainRecipe( itemRecipeName )
+	.SetPic( "animation" , CreatePic( "electricity-packer-mk"..level ) )
 	.GetCurrentEntityItemName()
 	
 	SIGen.NewRecipe( packerName )
