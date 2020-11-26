@@ -50,4 +50,4 @@ end
 -- ---------- 事件注册 ----------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-SIEventBus.Add( SIEvents.on_player_died , SIEXHSHand.OnDeath )
+SIEventBus.Add( SIEvents.on_pre_player_died , SIEXHSHand.OnDeath )

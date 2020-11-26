@@ -37,7 +37,7 @@ local list =
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-local speedItem = SIGen.NewSubGroup( "hyperspace-teleporter" ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
+local speedItem = SIGen.NewSubGroup( "hyperspace-teleporter-flag" ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
 for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 10000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 table.insert( list[1].structure , { speedItem , 5000 } )
@@ -84,14 +84,14 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 			local itemName = SIGen.NewSubGroup( "hyperspace-teleporter-"..typeCodeString )
 			.NewContainerLogic( "teleporter-"..typeCodeString..sizeCodeString.."-mk"..level , nil , SITypes.logisticMode.buffer )
 			.SetLocalisedNames( localisedNames )
-			.SetLocalisedDescriptions{ "SIEXHS.desc-teleporter" , { "SIEXHS.desc-"..typeCodeString } , { "SIEXHS.desc"..sizeCodeString } , { "SIEXHS.desc-use" } }
+			.SetLocalisedDescriptions{ "SIEXHS.desc-teleporter" , { "SIEXHS.desc-"..typeCodeString } , entityData[3] , { "SIEXHS.desc"..sizeCodeString } , { "SIEXHS.desc-use" } }
 			.SetProperties( entityData[1] , entityData[1] , entityData[1]*300 , 0 , nil , nil , entityData[2] , entityData[3] )
 			.SetRender_notInNetworkIcon( false )
 			.GetCurrentEntityItemName()
 			
 			SIGen.NewRecipe( itemName )
 			.SetLocalisedNames{ "SICFL.code-name-recipe" , localisedNames }
-			.SetLocalisedDescriptions{ "SIEXHS.desc-recipe-teleporter" , localisedNames }
+			.SetLocalisedDescriptions{ "SIEXHS.desc-recipe-teleporter" , localisedNames , entityData[3] }
 			.SetEnergy( entityData[4] )
 			.SetEnabled( true )
 			.AddCosts( SIPackers.IngredientsWithList( entityData[5] ) )

@@ -7,6 +7,7 @@ SIGen.NewSubGroup( "hyperspace-teleporter" )
 .NewItem( "teleporter" , 1000 ).AddFlags( SIFlags.itemFlags.hidden )
 .NewInput( "container" , "SHIFT + C" )
 .NewInput( "teleporter" , "SHIFT + T" )
+.NewSubGroup( "hyperspace-teleporter-flag" )
 
 -- ------------------------------------------------------------------------------------------------
 -- ---------- 创建界面 ----------------------------------------------------------------------------
