@@ -31,6 +31,11 @@ local list =
 		recipe = { { "nuclear-reactor" , 20 } , { "personal-roboport-mk2-equipment" , 50 } , { "battery-mk2-equipment" , 200 } , { "speed-module-3" , 100 } }
 	}
 }
+-- energy = "3.125P" ,
+-- energy = "156.25P" ,
+-- energy = "7.8125E" ,
+-- energy = "390.625E" ,
+-- energy = "19.53125Z"
 
 SIEXHS.powerItems = {}
 
