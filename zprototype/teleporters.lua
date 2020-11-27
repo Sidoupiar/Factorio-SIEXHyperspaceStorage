@@ -7,28 +7,28 @@ local sizeCodes = { small = "-small" , normal = "" }
 local list =
 {
 	{
-		small = { 1 , 19 , 2 , 60 , { { SIEXHS.wallItem , 200 } } } ,
-		normal = { 3 , 59 , 3 , 120 , { { "steel-plate" , 100 } } } ,
+		small = { 1 , 19 , 2 , 150 , { { SIEXHS.wallItem , 200 } } } ,
+		normal = { 3 , 59 , 3 , 300 , { { "steel-plate" , 100 } } } ,
 		structure = { { "splitter" , 8 } , { "fast-inserter" , 5 } , { "electric-mining-drill" , 3 } }
 	} ,
 	{
-		small = { 1 , 39 , 3 , 120 , { { SIEXHS.wallItem , 300 } } } ,
-		normal = { 3 , 119 , 6 , 240 , { { "logistic-science-pack" , 250 } } } ,
+		small = { 1 , 39 , 3 , 300 , { { SIEXHS.wallItem , 300 } } } ,
+		normal = { 3 , 119 , 6 , 600 , { { "logistic-science-pack" , 250 } } } ,
 		structure = { { "laser-turret" , 7 } , { "assembling-machine-2" , 3 } , { "locomotive" , 3 } }
 	} ,
 	{
-		small = { 1 , 79 , 4 , 240 , { { SIEXHS.wallItem , 500 } } } ,
-		normal = { 3 , 239 , 10 , 480 , { { "iron-chest" , 350 } } } ,
+		small = { 1 , 79 , 4 , 600 , { { SIEXHS.wallItem , 500 } } } ,
+		normal = { 3 , 239 , 10 , 1200 , { { "iron-chest" , 350 } } } ,
 		structure = { { "production-science-pack" , 5 } , { "power-switch" , 3 } , { "low-density-structure" , 3 } , { "substation" , 2 } }
 	} ,
 	{
-		small = { 1 , 159 , 6 , 480 , { { SIEXHS.wallItem , 800 } } } ,
-		normal = { 3 , 479 , 14 , 960 , { { "steel-chest" , 350 } } } ,
+		small = { 1 , 159 , 6 , 1200 , { { SIEXHS.wallItem , 800 } } } ,
+		normal = { 3 , 479 , 14 , 2400 , { { "steel-chest" , 350 } } } ,
 		structure = { { "express-underground-belt" , 5 } , { "fusion-reactor-equipment" , 3 } , { "effectivity-module-3" , 3 } , { "uranium-fuel-cell" , 5 } }
 	} ,
 	{
-		small = { 1 , 319 , 8 , 960 , { { SIEXHS.wallItem , 1200 } } } ,
-		normal = { 3 , 959 , 20 , 1920 , { { "logistic-chest-buffer" , 350 } } } ,
+		small = { 1 , 319 , 8 , 2400 , { { SIEXHS.wallItem , 1200 } } } ,
+		normal = { 3 , 959 , 20 , 4800 , { { "logistic-chest-buffer" , 350 } } } ,
 		structure = { { "utility-science-pack" , 5 } , { "rocket-control-unit" , 10 } , { "satellite" , 1 } , { "rocket-silo" , 1 } }
 	}
 }

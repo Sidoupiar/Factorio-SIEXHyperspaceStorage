@@ -11,7 +11,7 @@ SIGen.NewSubGroup( "hyperspace-others" )
 local onDeath = SIGen.NewItem( "hand-on-death" ).GetCurrentEntityName()
 
 SIGen.NewRecipe( onDeath )
-.SetEnergy( 30 )
+.SetEnergy( 60 )
 .SetEnabled( true )
 .SetRecipeTypes( SIEXHS.recipeType )
 .AddCosts( "steel-plate" , 15 )

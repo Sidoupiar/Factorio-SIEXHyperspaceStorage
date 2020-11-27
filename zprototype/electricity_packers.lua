@@ -100,7 +100,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	SIGen.NewRecipe( packerName )
 	.SetLocalisedNames{ "SICFL.code-name-recipe" , packerLocalisedNames }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-recipe" , packerLocalisedNames }
-	.SetEnergy( math.pow( level , 2 )*10 )
+	.SetEnergy( math.pow( level , 2 )*20 )
 	.SetEnabled( true )
 	.SetRecipeTypes( SIEXHS.recipeType )
 	.SetCosts( SIPackers.IngredientsWithList( recipe ) )
@@ -119,7 +119,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	SIGen.NewRecipe( unpackerName )
 	.SetLocalisedNames{ "SICFL.code-name-recipe" , unpackerLocalisedNames }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-recipe" , unpackerLocalisedNames }
-	.SetEnergy( math.pow( level , 2 )*10 )
+	.SetEnergy( math.pow( level , 2 )*20 )
 	.SetEnabled( true )
 	.SetRecipeTypes( SIEXHS.recipeType )
 	.SetCosts( SIPackers.IngredientsWithList( recipe ) )
