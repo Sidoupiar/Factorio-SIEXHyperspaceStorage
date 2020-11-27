@@ -44,9 +44,9 @@ local function CreatePic( name )
 	return
 	{
 		north = SIPics.OnAnimLayer( path.."-north-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
+		south = SIPics.Get() ,
 		east = SIPics.OnAnimLayer( path.."-east-west" , 2 , 3 ).Get() ,
-		south = SIPics.OnAnimLayer( path.."-north-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
-		west = SIPics.OnAnimLayer( path.."-east-west" , 2 , 3 ).Get() ,
+		west = SIPics.Get() ,
 	}
 end
 
@@ -65,12 +65,11 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	local energy = packerData.energy
 	local size = packerData.size
 	local recipe = packerData.recipe
-	local technology = packerData.technology
 	local recipeType = "siexhs-electricity-power-packer-mk" .. level
 	
 	SIGen.NewTypeRecipe( recipeType )
 	
-	local itemName = SIGen.NewSubGroup( "hyperspace-electricity-item" )
+	local itemName = SIGen.NewSubGroup( "hyperspace-electricity" )
 	.NewItem( "electricity-power-mk"..level , 100 )
 	.SetLocalisedNames{ "SIEXHS.name-power" , level }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-power" }
@@ -103,6 +102,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedDescriptions{ "SIEXHS.desc-recipe" , packerLocalisedNames }
 	.SetEnergy( math.pow( level , 2 )*10 )
 	.SetEnabled( true )
+	.SetRecipeTypes( SIEXHS.recipeType )
 	.SetCosts( SIPackers.IngredientsWithList( recipe ) )
 	.SetResults( packerName )
 	.AddLastLevel( 4 )
@@ -121,6 +121,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedDescriptions{ "SIEXHS.desc-recipe" , unpackerLocalisedNames }
 	.SetEnergy( math.pow( level , 2 )*10 )
 	.SetEnabled( true )
+	.SetRecipeTypes( SIEXHS.recipeType )
 	.SetCosts( SIPackers.IngredientsWithList( recipe ) )
 	.SetResults( unpackerName )
 	.AddLastLevel( 4 )

@@ -6,13 +6,14 @@
 -- ---------- 额外材料 ----------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-SIGen.NewSubGroup( "hyperspace-teleporter-others" )
+SIGen.NewSubGroup( "hyperspace-others" )
 
 local onDeath = SIGen.NewItem( "hand-on-death" ).GetCurrentEntityName()
 
 SIGen.NewRecipe( onDeath )
 .SetEnergy( 30 )
 .SetEnabled( true )
+.SetRecipeTypes( SIEXHS.recipeType )
 .AddCosts( "steel-plate" , 15 )
 .AddCosts( "transport-belt" , 50 )
 .AddCosts( SIEXHS.lightItem , 25 )

@@ -37,13 +37,14 @@ local list =
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-local speedItem = SIGen.NewSubGroup( "hyperspace-teleporter-flag" ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
+local speedItem = SIGen.NewSubGroup( "hyperspace-flags" ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
 for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 10000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 table.insert( list[1].structure , { speedItem , 5000 } )
-SIGen.NewSubGroup( "hyperspace-teleporter-base" )
+SIGen.NewSubGroup( "hyperspace-base" )
 .NewRecipe( speedItem )
 .SetEnabled( true )
+.SetRecipeTypes( SIEXHS.recipeType )
 .AddCosts( "transport-belt" , 4 )
 .AddCosts( "copper-plate" , 2 )
 .AddCosts( SIEXHS.coreItem )
@@ -59,7 +60,7 @@ local lastItemName = {}
 for level = 1 , SIEXHS.maxLevel , 1 do
 	local teleporterData = list[level]
 	
-	local structureItem = SIGen.NewSubGroup( "hyperspace-teleporter-structure" )
+	local structureItem = SIGen.NewSubGroup( "hyperspace-structure" )
 	.NewItem( "hyperspace-structure-mk"..level , 5 )
 	.SetLocalisedNames{ "SIEXHS.name-structure" , level }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-structure" }
@@ -70,6 +71,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedDescriptions{ "SIEXHS.desc-structure" }
 	.SetEnergy( #teleporterData.structure*level*3 )
 	.SetEnabled( true )
+	.SetRecipeTypes( SIEXHS.recipeType )
 	.AddCosts( SIPackers.IngredientsWithList( teleporterData.structure ) )
 	.AddCosts( SIEXHS.coreItem , level )
 	.AddResults( structureItem )
@@ -94,6 +96,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 			.SetLocalisedDescriptions{ "SIEXHS.desc-recipe-teleporter" , localisedNames , entityData[3] }
 			.SetEnergy( entityData[4] )
 			.SetEnabled( true )
+			.SetRecipeTypes( SIEXHS.recipeType )
 			.AddCosts( SIPackers.IngredientsWithList( entityData[5] ) )
 			.AddCosts( structureItem , 40 )
 			.AddCosts( SIEXHS.powerItems[level] , level*200 )

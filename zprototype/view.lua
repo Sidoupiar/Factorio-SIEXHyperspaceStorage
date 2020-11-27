@@ -2,12 +2,12 @@
 -- ---------- 基础数据 ----------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-SIGen.NewSubGroup( "hyperspace-teleporter" )
+SIGen.NewSubGroup( "hyperspace-icons" )
 .NewItem( "container" , 1000 ).AddFlags( SIFlags.itemFlags.hidden )
 .NewItem( "teleporter" , 1000 ).AddFlags( SIFlags.itemFlags.hidden )
 .NewInput( "container" , "SHIFT + C" )
 .NewInput( "teleporter" , "SHIFT + T" )
-.NewSubGroup( "hyperspace-teleporter-flag" )
+.NewSubGroup( "hyperspace-flags" )
 
 -- ------------------------------------------------------------------------------------------------
 -- ---------- 创建界面 ----------------------------------------------------------------------------

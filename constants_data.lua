@@ -4,5 +4,6 @@ return
 	autoLoad = true ,
 	autoName = true ,
 	
-	maxLevel = 5
+	maxLevel = 5 ,
+	recipeType = "siexhs-assembling-machine"
 }
