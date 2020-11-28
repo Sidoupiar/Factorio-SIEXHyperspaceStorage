@@ -101,7 +101,7 @@ SIGen
 .SetSelfIcon( "light" )
 
 .NewRecipe( "wood" )
-.SetEnergy( 1250 )
+.SetEnergy( 7500 )
 .SetEnabled( true )
 .SetRecipeTypes( SIEXHS.recipeType )
 .AddCosts( "wood" , 2000 )
