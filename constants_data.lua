@@ -5,5 +5,6 @@ return
 	autoName = true ,
 	
 	maxLevel = 5 ,
-	recipeType = "siexhs-assembling-machine"
+	recipeType = "siexhs-assembling-machine" ,
+	moduleLimit = {}
 }

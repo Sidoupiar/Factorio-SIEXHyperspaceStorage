@@ -4,9 +4,12 @@
 
 SIGen.NewTypeRecipe( SIEXHS.recipeType )
 .NewSubGroup( "hyperspace-base" )
+.NewSubGroup( "hyperspace-resource" )
 .NewSubGroup( "hyperspace-structure" )
 .NewSubGroup( "hyperspace-electricity" )
+.NewSubGroup( "hyperspace-module" )
 .NewSubGroup( "hyperspace-others" )
+.NewSubGroup( "hyperspace-base" )
 
 SIEXHS.coreItem = SIGen.NewItem( "main-core" ).GetCurrentEntityName()
 SIEXHS.autoItem = SIGen.NewItem( "main-core-automation" ).GetCurrentEntityName()
@@ -99,15 +102,3 @@ SIGen
 .AddCosts( SIEXHS.gel7Item , 12 )
 .AddResults( SIEXHS.lightItem , 2 )
 .SetSelfIcon( "light" )
-
-.NewRecipe( "wood" )
-.SetEnergy( 7500 )
-.SetEnabled( true )
-.SetRecipeTypes( SIEXHS.recipeType )
-.AddCosts( "wood" , 2000 )
-.AddCosts( "stone" , 100 )
-.AddCosts( SIEXHS.gel3Item , 25 )
-.AddCosts( SIEXHS.coreItem )
-.AddResults( "wood" , 2360 )
-.AddResults( SIPackers.SingleItemProduct( SIEXHS.coreItem , 0.85 , 1 , 1 , 1 ) )
-.SetSelfIcon( "wood" )

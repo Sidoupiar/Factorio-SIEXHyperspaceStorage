@@ -76,7 +76,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLevel( "siexhs-assembling-machine" , SIEXHS.maxLevel )
 	.SetFluidBoxes{ InputBox{ 2 , 0 } , InputBox{ 1 , 2 } , InputBox{ 1 , -2 } , OutpuBox{ -2 , 0 } , OutpuBox{ -1 , 2 } , OutpuBox{ -1 , -2 } }
 	.SetRecipeTypes{ "basic-crafting" , "crafting" , "advanced-crafting" , "smelting" , "chemistry" , "crafting-with-fluid" , "oil-processing" , SIEXHS.recipeType }
-	.SetPluginTypes{ SITypes.moduleEffect.speed , SITypes.moduleEffect.product , SITypes.moduleEffect.consumption }
+	.SetPluginTypes{ SITypes.moduleEffect.speed , SITypes.moduleEffect.product , SITypes.moduleEffect.consumption , SITypes.moduleEffect.pollut }
 	.SetPic( "animation" , CreatePic() )
 	.GetCurrentEntityItemName()
 	
