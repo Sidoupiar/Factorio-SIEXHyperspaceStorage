@@ -6,39 +6,48 @@ local list =
 {
 	{
 		energy = "500KW" ,
-		data = { 0.1 , 15 , 1 } ,
-		recipe = { { "steam-engine" , 4 } , { "assembling-machine-1" , 3 } , { "electronic-circuit" , 15 } }
+		data = { 0.05 , 15 , 2 } ,
+		recipe = { { "steam-engine" , 4 } , { "iron-gear-wheel" , 20 } , { "electronic-circuit" , 15 } }
 	} ,
 	{
 		energy = "1MW" ,
-		data = { 0.2 , 15 , 2 } ,
-		recipe = { { "power-switch" , 10 } , { "assembling-machine-2" , 3 } , { "repair-pack" , 15 } }
+		data = { 0.1 , 15 , 3 } ,
+		recipe = { { "power-switch" , 10 } , { "assembling-machine-1" , 5 } , { "repair-pack" , 15 } }
 	} ,
 	{
 		energy = "2MW" ,
-		data = { 0.3 , 15 , 5 } ,
-		recipe = { { "accumulator" , 10 } , { "assembling-machine-3" , 3 } , { "advanced-circuit" , 5 } }
+		data = { 0.2 , 15 , 5 } ,
+		recipe = { { "accumulator" , 10 } , { "assembling-machine-2" , 5 } , { "advanced-circuit" , 5 } }
 	} ,
 	{
 		energy = "5MW" ,
-		data = { 0.5 , 15 , 10 } ,
-		recipe = { { "steam-turbine" , 5 } , { "substation" , 10 } , { "processing-unit" , 10 } }
+		data = { 0.3 , 15 , 10 } ,
+		recipe = { { "steam-turbine" , 5 } , { "assembling-machine-3" , 5 } , { "processing-unit" , 10 } }
 	} ,
 	{
 		energy = "10MW" ,
-		data = { 0.8 , 15 , 20 } ,
+		data = { 0.5 , 15 , 20 } ,
 		recipe = { { "nuclear-reactor" , 2 } , { "battery-mk2-equipment" , 10 } , { "speed-module-3" , 5 } }
 	}
 }
 
-local function CreatePic( name )
+local function InputBox( pos )
+	return SIPackers.FluidBox( 10 , SIPackers.FluidBoxConnection( pos , SITypes.fluidBoxConnectionType.inAndOut ) , -2 , SITypes.fluidBoxProductionType.input )
+end
+
+local function OutpuBox( pos )
+	return SIPackers.FluidBox( 10 , SIPackers.FluidBoxConnection( pos , SITypes.fluidBoxConnectionType.inAndOut ) , 2 , SITypes.fluidBoxProductionType.output )
+end
+
+local function CreatePic()
 	local path = SIGen.GetLayerFile()
+	local layer = SIPics.OnAnimLayer( path.."-four" , 3 , 3 ).Get()
 	return
 	{
-		north = SIPics.OnAnimLayer( path.."-north-south" , 3 , 2 ).Get() ,
-		south = SIPics.Get() ,
-		east = SIPics.OnAnimLayer( path.."-east-west" , 2 , 3 ).Get() ,
-		west = SIPics.Get() ,
+		north = layer ,
+		south = layer ,
+		east = layer ,
+		west = layer
 	}
 end
 
@@ -64,9 +73,11 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedDescriptions{ "SIEXHS.desc-machine" }
 	.SetProperties( 3 , 3 , 450 , data[1] , energy , SIPackers.ElectricEnergySource() , data[2] )
 	.SetPluginData( data[3] , { 0 , 0.9 } )
-	.SetFluidBox( 10 , SIPackers.FluidBoxConnection( { { 1 , 0 } , { -1 , 0 } , { 0 , 1 } , { 0 , -1 } } , SITypes.fluidBoxConnectionType.inAndOut ) )
-	.SetRecipeTypes{ "crafting" , "advanced-crafting" , "fluid-crafting" , SIEXHS.recipeType }
-	.SetPic( "animation" , CreatePic( "assembling-machine-mk"..level ) 
+	.SetLevel( "siexhs-assembling-machine" , SIEXHS.maxLevel )
+	.SetFluidBoxes{ InputBox{ 2 , 0 } , InputBox{ 1 , 2 } , InputBox{ 1 , -2 } , OutpuBox{ -2 , 0 } , OutpuBox{ -1 , 2 } , OutpuBox{ -1 , -2 } }
+	.SetRecipeTypes{ "basic-crafting" , "crafting" , "advanced-crafting" , "smelting" , "chemistry" , "crafting-with-fluid" , "oil-processing" , SIEXHS.recipeType }
+	.SetPluginTypes{ SITypes.moduleEffect.speed , SITypes.moduleEffect.product , SITypes.moduleEffect.consumption }
+	.SetPic( "animation" , CreatePic() )
 	.GetCurrentEntityItemName()
 	
 	SIGen.NewRecipe( machineName )
@@ -74,8 +85,9 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedDescriptions{ "SIEXHS.desc-recipe" , localisedNames }
 	.SetEnergy( math.pow( level , 2 )*10 )
 	.SetEnabled( true )
-	.SetCosts( SIPackers.IngredientsWithList( recipe ) )
-	.SetCosts( SIEXHS.autoItem , level*2+3 )
-	.SetResults( machineName )
-	.AddLastLevel( 2 )
+	.AddCosts( SIPackers.IngredientsWithList( recipe ) )
+	.AddCosts( "stone-brick" , level*5+5 )
+	.AddCosts( SIEXHS.autoItem , level*2+3 )
+	.AddResults( machineName )
+	.AddLastLevel( 3 )
 end

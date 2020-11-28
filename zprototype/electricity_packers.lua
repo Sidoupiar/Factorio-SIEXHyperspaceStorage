@@ -39,14 +39,14 @@ local list =
 
 SIEXHS.powerItems = {}
 
-local function CreatePic( name )
+local function CreatePic()
 	local path = SIGen.GetLayerFile()
 	return
 	{
-		north = SIPics.OnAnimLayer( path.."-north-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -8 ).Get() ,
+		north = SIPics.OnAnimLayer( path.."-north-south" , 3 , 2 , nil , 0 , 16 ).Shift( 0 , -13 ).Get() ,
 		south = SIPics.Get() ,
 		east = SIPics.OnAnimLayer( path.."-east-west" , 2 , 3 ).Get() ,
-		west = SIPics.Get() ,
+		west = SIPics.Get()
 	}
 end
 
@@ -94,7 +94,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetProperties( size[1] , size[2] , size[1]*100 , 1 , energy.."W" , SIPackers.ElectricEnergySource() , 1 )
 	.SetRecipeTypes( recipeType )
 	.SetMainRecipe( itemRecipeName )
-	.SetPic( "animation" , CreatePic( "electricity-packer-mk"..level ) )
+	.SetPic( "animation" , CreatePic() )
 	.GetCurrentEntityItemName()
 	
 	SIGen.NewRecipe( packerName )
@@ -113,7 +113,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedDescriptions{ "SIEXHS.desc-unpacker" }
 	.SetProperties( size[1] , size[2] , size[1]*100 , 1 , energy.."W" , SIPackers.ElectricEnergySource( SITypes.electricUsagePriority.secondaryOutput ) )
 	.SetCustomData{ burner = SIPackers.BurnerEnergySourceWithParameters{ fuel_category = fuelType } }
-	.SetPic( "animation" , CreatePic( "electricity-unpacker-mk"..level ) )
+	.SetPic( "animation" , CreatePic() )
 	.GetCurrentEntityItemName()
 	
 	SIGen.NewRecipe( unpackerName )

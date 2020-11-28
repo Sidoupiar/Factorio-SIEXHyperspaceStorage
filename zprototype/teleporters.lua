@@ -69,7 +69,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	SIGen.NewRecipe( structureItem )
 	.SetLocalisedNames{ "SIEXHS.name-structure" , level }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-structure" }
-	.SetEnergy( #teleporterData.structure*level*3 )
+	.SetEnergy( #teleporterData.structure*math.pow( level , 2 )*5 )
 	.SetEnabled( true )
 	.SetRecipeTypes( SIEXHS.recipeType )
 	.AddCosts( SIPackers.IngredientsWithList( teleporterData.structure ) )
