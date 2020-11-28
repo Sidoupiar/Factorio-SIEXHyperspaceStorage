@@ -51,7 +51,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 		.AddCosts( "iron-gear-wheel" , level*15+20 )
 		.AddCosts( SIEXHS.gel7Item , level*4+8 )
 		.AddCosts( SIEXHS.autoItem )
-		.AddResults( moduleName )
+		.AddResults( SIPackers.SingleItemProduct( moduleName , 1 , nil , nil , 1 ) )
 		.AddLastLevel( 5 )
 	end
 end

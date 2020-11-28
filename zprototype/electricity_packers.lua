@@ -70,7 +70,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	SIGen.NewTypeRecipe( recipeType )
 	
 	local itemName = SIGen.NewSubGroup( "hyperspace-electricity" )
-	.NewItem( "electricity-power-mk"..level , 100 )
+	.NewItem( "electricity-power-mk"..level , 200 )
 	.SetLocalisedNames{ "SIEXHS.name-power" , level }
 	.SetLocalisedDescriptions{ "SIEXHS.desc-power" }
 	.SetEnergy( energy.."J" , fuelType )
