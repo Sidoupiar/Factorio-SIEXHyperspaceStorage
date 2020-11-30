@@ -16,17 +16,17 @@ local list =
 	} ,
 	{
 		energy = "2MW" ,
-		data = { 0.2 , 15 , 5 } ,
+		data = { 0.2 , 15 , 6 } ,
 		recipe = { { "accumulator" , 10 } , { "assembling-machine-2" , 5 } , { "advanced-circuit" , 5 } }
 	} ,
 	{
 		energy = "5MW" ,
-		data = { 0.3 , 15 , 10 } ,
+		data = { 0.3 , 15 , 12 } ,
 		recipe = { { "steam-turbine" , 5 } , { "assembling-machine-3" , 5 } , { "processing-unit" , 10 } }
 	} ,
 	{
 		energy = "10MW" ,
-		data = { 0.5 , 15 , 20 } ,
+		data = { 0.5 , 15 , 24 } ,
 		recipe = { { "nuclear-reactor" , 2 } , { "battery-mk2-equipment" , 10 } , { "speed-module-3" , 5 } }
 	}
 }
