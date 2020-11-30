@@ -11,7 +11,7 @@ local list =
 	} ,
 	{
 		energy = "1MW" ,
-		data = { 0.1 , 15 , 3 } ,
+		data = { 0.1 , 15 , 4 } ,
 		recipe = { { "power-switch" , 10 } , { "assembling-machine-1" , 5 } , { "repair-pack" , 15 } }
 	} ,
 	{
