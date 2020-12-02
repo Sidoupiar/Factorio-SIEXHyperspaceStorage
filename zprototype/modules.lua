@@ -7,8 +7,8 @@ local effects =
 	speed = function( level )
 		return
 		{
-			[SITypes.moduleEffect.speed] = { bonus = level } ,
-			[SITypes.moduleEffect.product] = { bonus = -1 } ,
+			[SITypes.moduleEffect.speed] = { bonus = level*1.2 } ,
+			[SITypes.moduleEffect.product] = { bonus = -1.5 } ,
 			[SITypes.moduleEffect.consumption] = { bonus = level*2 } ,
 			[SITypes.moduleEffect.pollut] = { bonus = level*1.2 }
 		}
@@ -16,8 +16,8 @@ local effects =
 	product = function( level )
 		return
 		{
-			[SITypes.moduleEffect.speed] = { bonus = -5 } ,
-			[SITypes.moduleEffect.product] = { bonus = level*0.2 } ,
+			[SITypes.moduleEffect.speed] = { bonus = -6 } ,
+			[SITypes.moduleEffect.product] = { bonus = level*0.3 } ,
 			[SITypes.moduleEffect.consumption] = { bonus = level*3.5 } ,
 			[SITypes.moduleEffect.pollut] = { bonus = level*2 }
 		}
