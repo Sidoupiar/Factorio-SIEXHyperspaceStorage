@@ -5,27 +5,27 @@
 local list =
 {
 	{
-		energy = "200KW" ,
+		energy = "100KW" ,
 		data = { 0.08 , 15 , 2 } ,
 		recipe = { { "steam-engine" , 4 } , { "iron-gear-wheel" , 20 } , { "electronic-circuit" , 15 } }
 	} ,
 	{
-		energy = "500KW" ,
+		energy = "230KW" ,
 		data = { 0.15 , 15 , 4 } ,
 		recipe = { { "power-switch" , 10 } , { "assembling-machine-1" , 5 } , { "repair-pack" , 15 } }
 	} ,
 	{
-		energy = "1MW" ,
+		energy = "520KW" ,
 		data = { 0.3 , 15 , 6 } ,
 		recipe = { { "accumulator" , 10 } , { "assembling-machine-2" , 5 } , { "advanced-circuit" , 5 } }
 	} ,
 	{
-		energy = "2MW" ,
+		energy = "1.2MW" ,
 		data = { 0.45 , 15 , 12 } ,
 		recipe = { { "steam-turbine" , 5 } , { "assembling-machine-3" , 5 } , { "processing-unit" , 10 } }
 	} ,
 	{
-		energy = "5MW" ,
+		energy = "2.6MW" ,
 		data = { 0.75 , 15 , 24 } ,
 		recipe = { { "nuclear-reactor" , 2 } , { "battery-mk2-equipment" , 10 } , { "speed-module-3" , 5 } }
 	}
