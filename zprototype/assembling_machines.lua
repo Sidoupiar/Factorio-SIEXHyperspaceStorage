@@ -5,28 +5,28 @@
 local list =
 {
 	{
-		energy = "500KW" ,
-		data = { 0.05 , 15 , 2 } ,
+		energy = "200KW" ,
+		data = { 0.08 , 15 , 2 } ,
 		recipe = { { "steam-engine" , 4 } , { "iron-gear-wheel" , 20 } , { "electronic-circuit" , 15 } }
 	} ,
 	{
-		energy = "1MW" ,
-		data = { 0.1 , 15 , 4 } ,
+		energy = "500KW" ,
+		data = { 0.15 , 15 , 4 } ,
 		recipe = { { "power-switch" , 10 } , { "assembling-machine-1" , 5 } , { "repair-pack" , 15 } }
 	} ,
 	{
-		energy = "2MW" ,
-		data = { 0.2 , 15 , 6 } ,
+		energy = "1MW" ,
+		data = { 0.3 , 15 , 6 } ,
 		recipe = { { "accumulator" , 10 } , { "assembling-machine-2" , 5 } , { "advanced-circuit" , 5 } }
 	} ,
 	{
-		energy = "5MW" ,
-		data = { 0.3 , 15 , 12 } ,
+		energy = "2MW" ,
+		data = { 0.45 , 15 , 12 } ,
 		recipe = { { "steam-turbine" , 5 } , { "assembling-machine-3" , 5 } , { "processing-unit" , 10 } }
 	} ,
 	{
-		energy = "10MW" ,
-		data = { 0.5 , 15 , 24 } ,
+		energy = "5MW" ,
+		data = { 0.75 , 15 , 24 } ,
 		recipe = { { "nuclear-reactor" , 2 } , { "battery-mk2-equipment" , 10 } , { "speed-module-3" , 5 } }
 	}
 }
@@ -89,5 +89,5 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.AddCosts( "stone-brick" , level*5+5 )
 	.AddCosts( SIEXHS.autoItem , level*2+3 )
 	.AddResults( machineName )
-	.AddLastLevel( 3 )
+	.AddLastLevel( 2 )
 end

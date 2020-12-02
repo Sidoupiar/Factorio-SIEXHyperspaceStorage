@@ -9,8 +9,8 @@ local effects =
 		{
 			[SITypes.moduleEffect.speed] = { bonus = level } ,
 			[SITypes.moduleEffect.product] = { bonus = -1 } ,
-			[SITypes.moduleEffect.consumption] = { bonus = level*2.5 } ,
-			[SITypes.moduleEffect.pollut] = { bonus = level*1.5 }
+			[SITypes.moduleEffect.consumption] = { bonus = level*2 } ,
+			[SITypes.moduleEffect.pollut] = { bonus = level*1.2 }
 		}
 	end ,
 	product = function( level )
@@ -18,8 +18,8 @@ local effects =
 		{
 			[SITypes.moduleEffect.speed] = { bonus = -5 } ,
 			[SITypes.moduleEffect.product] = { bonus = level*0.2 } ,
-			[SITypes.moduleEffect.consumption] = { bonus = level*4 } ,
-			[SITypes.moduleEffect.pollut] = { bonus = level*3 }
+			[SITypes.moduleEffect.consumption] = { bonus = level*3.5 } ,
+			[SITypes.moduleEffect.pollut] = { bonus = level*2 }
 		}
 	end
 }
