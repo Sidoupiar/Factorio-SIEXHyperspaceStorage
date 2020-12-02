@@ -1,10 +1,10 @@
 {
 	"name" : "SIEXHyperspaceStorage" ,
-	"version" : "0.1.0" ,
+	"version" : "0.1.1" ,
 	"factorio_version" : "1.1" ,
 	"title" : "SI EX Hyperspace Storage" ,
 	"author" : "Sidoupiar" ,
 	"homepage" : "http://www.sidoupiar.com" ,
 	"description" : "致力于提供存储和物流的最终极解决方案" ,
-	"dependencies" : [ "SICoreFunctionLibrary >= 0.3.5" ]
+	"dependencies" : [ "SICoreFunctionLibrary >= 0.3.6" ]
 }
