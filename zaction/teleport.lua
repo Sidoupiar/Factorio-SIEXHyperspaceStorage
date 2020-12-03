@@ -37,7 +37,9 @@ function SIEXHSTeleport.GetSettings( entity )
 	if logistic.filters then
 		local limitUp = nil
 		local limitDown = nil
-		for i , filter in pairs( logistic.filters ) do
+		--for i , filter in pairs( logistic.filters ) do
+		for i = 1 , entity.request_slot_count , 1 do
+			local filter = logistic.filters[i]
 			if filter.name == SIEXHSTeleport.speedItemName then settings.speed = filter.count
 			elseif #filter.name >= SIEXHSTeleport.limitUpItemNameLength and filter.name:sub( 1 , SIEXHSTeleport.limitUpItemNameLength ) == SIEXHSTeleport.limitUpItemName then limitUp = filter.count
 			elseif #filter.name >= SIEXHSTeleport.limitDownItemNameLength and filter.name:sub( 1 , SIEXHSTeleport.limitDownItemNameLength ) == SIEXHSTeleport.limitDownItemName then limitDown = filter.count
