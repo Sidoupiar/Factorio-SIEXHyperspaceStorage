@@ -35,10 +35,11 @@ function SIEXHSTeleport.GetSettings( entity )
 	local logistic = entity.get_logistic_point( defines.logistic_member_index.logistic_container )
 	local settings = table.deepcopy( SIEXHSTeleport.settingsDefault )
 	if logistic.filters then
+		local filterCount = entity.prototype.filter_count
 		local limitUp = nil
 		local limitDown = nil
-		--for i , filter in pairs( logistic.filters ) do
-		for i = 1 , entity.request_slot_count , 1 do
+		for i , filter in pairs( logistic.filters ) do
+			if i > filterCount then break end
 			local filter = logistic.filters[i]
 			if filter.name == SIEXHSTeleport.speedItemName then settings.speed = filter.count
 			elseif #filter.name >= SIEXHSTeleport.limitUpItemNameLength and filter.name:sub( 1 , SIEXHSTeleport.limitUpItemNameLength ) == SIEXHSTeleport.limitUpItemName then limitUp = filter.count

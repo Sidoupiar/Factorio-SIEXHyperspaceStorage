@@ -37,7 +37,7 @@ local list =
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-local speedItem = SIGen.NewSubGroup( "hyperspace-flags" ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
+local speedItem = SIGen.NewSubGroup( "hyperspace-flags" ).NewItem( "teleport-item" , 1000 ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
 for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 10000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 table.insert( list[1].structure , { speedItem , 5000 } )
@@ -88,6 +88,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 			.SetLocalisedNames( localisedNames )
 			.SetLocalisedDescriptions{ "SIEXHS.desc-teleporter" , { "SIEXHS.desc-"..typeCodeString } , entityData[3] , { "SIEXHS.desc"..sizeCodeString } , { "SIEXHS.desc-use" } }
 			.SetProperties( entityData[1] , entityData[1] , entityData[1]*300 , 0 , nil , nil , entityData[2] , entityData[3] )
+			.SetCorpse( nil , "nuke-explosion" )
 			.SetRender_notInNetworkIcon( false )
 			.GetCurrentEntityItemName()
 			

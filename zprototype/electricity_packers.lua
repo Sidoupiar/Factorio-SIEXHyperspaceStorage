@@ -92,6 +92,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedNames( packerLocalisedNames )
 	.SetLocalisedDescriptions{ "SIEXHS.desc-packer" }
 	.SetProperties( size[1] , size[2] , size[1]*100 , 1 , energy.."W" , SIPackers.ElectricEnergySource() , 1 )
+	.SetCorpse( nil , "nuke-explosion" )
 	.SetRecipeTypes( recipeType )
 	.SetMainRecipe( itemRecipeName )
 	.SetPic( "animation" , CreatePic() )
@@ -112,6 +113,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetLocalisedNames( unpackerLocalisedNames )
 	.SetLocalisedDescriptions{ "SIEXHS.desc-unpacker" }
 	.SetProperties( size[1] , size[2] , size[1]*100 , 1 , energy.."W" , SIPackers.ElectricEnergySource( SITypes.electricUsagePriority.secondaryOutput ) )
+	.SetCorpse( nil , "nuke-explosion" )
 	.SetCustomData{ burner = SIPackers.BurnerEnergySourceWithParameters{ fuel_category = fuelType } }
 	.SetPic( "animation" , CreatePic() )
 	.GetCurrentEntityItemName()

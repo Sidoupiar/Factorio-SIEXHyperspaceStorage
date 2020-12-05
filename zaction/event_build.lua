@@ -7,6 +7,9 @@ SIEXHSTeleporter =
 	regex = "siexhs%-container%-teleporter" ,
 	position = #"siexhs-container-teleporter-" + 1 ,
 	
+	speedItemName = "siexhs-item-teleport-speed" ,
+	selectItemName = "siexhs-item-teleport-item" ,
+	
 	forceDataDefault =
 	{
 		i = {} ,
@@ -31,6 +34,9 @@ function SIEXHSTeleporter.Build( event )
 			containerData[forceIndex] = forceData
 		end
 		table.insert( forceData[typeCode] , { name , entity.surface.index , { entity.position.x , entity.position.y } , NewEntityIndex() , nil } )
+		-- 添加请求
+		entity.set_request_slot( SIEXHSTeleporter.speedItemName , 1 )
+		entity.set_request_slot( { name = SIEXHSTeleporter.selectItemName , count = 0 } , 2 )
 	end
 end
 
