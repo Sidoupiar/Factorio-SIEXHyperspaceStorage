@@ -37,7 +37,7 @@ local list =
 -- -------- 创建辅助物品 --------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-local speedItem = SIGen.NewSubGroup( "hyperspace-flags" ).NewItem( "teleport-item" , 1000 ).NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
+local speedItem = SIGen.NewSubGroup( "hyperspace-flags" ).NewItem( "teleport-item" , 1000 ).AddFlags{ SIFlags.itemFlags.hidden }.NewItem( "teleport-speed" , 1000 ).GetCurrentEntityName()
 for i = 1 , 4 , 1 do SIGen.NewItem( "teleport-limit-up-"..i , 10000 ).NewItem( "teleport-limit-down-"..i , 1000 ) end
 
 table.insert( list[1].structure , { speedItem , 5000 } )
