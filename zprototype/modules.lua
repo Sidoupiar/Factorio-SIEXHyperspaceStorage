@@ -2,7 +2,7 @@
 -- ---------- 创建材料 ----------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------
 
-function Speed( level )
+local function Speed( level )
 	return
 	{
 		[SITypes.moduleEffect.speed] = { bonus = level*1.2 } ,
@@ -12,7 +12,7 @@ function Speed( level )
 	}
 end
 
-function Product( level )
+local function Product( level )
 	return
 	{
 		[SITypes.moduleEffect.speed] = { bonus = -6 } ,
