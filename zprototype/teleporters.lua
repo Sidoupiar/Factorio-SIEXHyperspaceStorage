@@ -90,6 +90,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 			.SetProperties( entityData[1] , entityData[1] , entityData[1]*300 , 0 , nil , nil , entityData[2] , entityData[3] )
 			.SetCorpse( nil , "nuke-explosion" )
 			.SetRender_notInNetworkIcon( false )
+			.FillImage()
 			.GetCurrentEntityItemName()
 			
 			SIGen.NewRecipe( itemName )
