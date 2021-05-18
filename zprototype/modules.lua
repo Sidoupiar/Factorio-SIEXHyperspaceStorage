@@ -58,7 +58,7 @@ for level = 1 , SIEXHS.maxLevel , 1 do
 	.SetCustomData
 	{
 		category = "siexhs-module-product" ,
-		effect = Speed( level )
+		effect = Product( level )
 	}
 	.GetCurrentEntityName()
 	
