@@ -200,7 +200,7 @@ end
 -- ------------------------------------------------------------------------------------------------
 
 function SIEXHSTeleporterView.OnInit( event )
-	remote.call( "sicfl-toolbar" , "AddTool" , SIEXHSTeleporterView.toolbarButtonId , SIEXHSTeleporterView.toolbarButtonName , SIEXHSTeleporterView.toolbarItemName , "SIEXHS.teleporter-toolbar-button" , "SIEXHS.teleporter-toolbar-tooltip" , SIEXHSTeleporterView.interfaceId , "ShowViewByPlayerIndex" )
+	SIToolbar.AddTool( SIEXHSTeleporterView.toolbarButtonId , SIEXHSTeleporterView.toolbarButtonName , SIEXHSTeleporterView.toolbarItemName , "SIEXHS.teleporter-toolbar-button" , "SIEXHS.teleporter-toolbar-tooltip" , SIEXHSTeleporterView.interfaceId , "ShowViewByPlayerIndex" )
 end
 
 function SIEXHSTeleporterView.OnOpenView( event )

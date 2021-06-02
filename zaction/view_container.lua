@@ -139,7 +139,7 @@ end
 -- ------------------------------------------------------------------------------------------------
 
 function SIEXHSContainerView.OnInit( event )
-	remote.call( "sicfl-toolbar" , "AddTool" , SIEXHSContainerView.toolbarButtonId , SIEXHSContainerView.toolbarButtonName , SIEXHSContainerView.toolbarItemName , "SIEXHS.container-toolbar-button" , "SIEXHS.container-toolbar-tooltip" , SIEXHSContainerView.interfaceId , "ShowViewByPlayerIndex" )
+	SIToolbar.AddTool( SIEXHSContainerView.toolbarButtonId , SIEXHSContainerView.toolbarButtonName , SIEXHSContainerView.toolbarItemName , "SIEXHS.container-toolbar-button" , "SIEXHS.container-toolbar-tooltip" , SIEXHSContainerView.interfaceId , "ShowViewByPlayerIndex" )
 end
 
 function SIEXHSContainerView.OnOpenView( event )
