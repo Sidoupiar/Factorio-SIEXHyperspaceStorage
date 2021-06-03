@@ -166,7 +166,7 @@ end
 
 SIEventBus
 .Init( SIEXHSContainerView.OnInit )
-.Add( "siexhs-container" , SIEXHSContainerView.OnOpenView )
+.Add( "siexhs-input-container" , SIEXHSContainerView.OnOpenView )
 .Add( SIEvents.on_gui_click , SIEXHSContainerView.OnClickView )
 
 remote.add_interface( SIEXHSContainerView.interfaceId ,

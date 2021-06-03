@@ -261,7 +261,7 @@ end
 
 SIEventBus
 .Init( SIEXHSTeleporterView.OnInit )
-.Add( "siexhs-teleporter" , SIEXHSTeleporterView.OnOpenView )
+.Add( "siexhs-input-teleporter" , SIEXHSTeleporterView.OnOpenView )
 .Add( SIEvents.on_gui_click , SIEXHSTeleporterView.OnClickView )
 
 remote.add_interface( SIEXHSTeleporterView.interfaceId ,
