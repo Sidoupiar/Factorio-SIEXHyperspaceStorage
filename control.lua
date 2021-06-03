@@ -24,10 +24,12 @@ load()
 --   o = { { name , surfaceIndex , { x , y } } } ,
 --   s = { { name , count } }
 -- }
-SIGlobal.Create( "commonData" )
-SIGlobal.Create( "containerView" )
-SIGlobal.Create( "teleporterView" )
-SIGlobal.Create( "containerData" )
+SIGlobal
+.Create( "commonData" )
+.Create( "containerView" )
+.Create( "teleporterView" )
+.Create( "containerData" )
+
 needlist( "zaction" , "view_container" , "view_teleporter" , "event_build" , "teleport" , "hand" )
 
 -- ------------------------------------------------------------------------------------------------
